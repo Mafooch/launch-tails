@@ -13,6 +13,23 @@
     <h1>New Drink</h1>
 
     <%= form_for @drink do |f| %>
+
+      <%= f.check_box :featured %>
+      <%= f.label :featured %>
+
+      <%= f.label :category %>
+      <%= f.select(:category, Category.all.collect { |c| [c.name, c.id] }) %>
+
+      <%= f.radio_button(:alcohol_level, "Low") %>
+      <%= f.label(:alcohol_level_low, "Low") %>
+<!--  if you see _tag that's for not using form_for. you can translate easily back and forth
+ just chop of the the 'tag' at the end and call on the f e.g. f.radio_button-->
+<!-- value is the "Medium. that's what gets passed back" -->
+      <%= f.radio_button(:alcohol_level, "Medium") %>
+      <%= f.label(:alcohol_level_medium, "Medium") %>
+      <%= f.radio_button(:alcohol_level, "High") %>
+      <%= f.label(:alcohol_level_high, "High") %>
+
       <%= f.label :title %>
       <%= f.text_field :title %>
 
