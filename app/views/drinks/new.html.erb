@@ -16,7 +16,7 @@
 
       <%= f.check_box :featured %>
       <%= f.label :featured %>
-
+<!-- without the second label it, rails by default gives 'Category' label -->
       <%= f.label :category_id %>
       <%= f.select(:category_id, Category.all.collect { |c| [c.name, c.id] }) %>
 

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
-  resources :categories do
-    resources :drinks
+  resources :categories, only: [] do
+    resources :drinks, only: [:index]
   end
 
   resources :drinks
